@@ -1,0 +1,19 @@
+---
+const {
+  title,
+  section,
+  updated = "unknown",
+} = Astro.props;
+---
+
+<div class="hero">
+  <div class="hero-kicker">{section} / archive entry</div>
+  <h1>{title}</h1>
+  <div class="meta">
+    last updated: {updated}
+  </div>
+</div>
+
+<div class="prose">
+  <slot />
+</div>

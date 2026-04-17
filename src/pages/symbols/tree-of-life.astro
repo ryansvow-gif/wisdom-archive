@@ -1,0 +1,273 @@
+
+
+---
+const pageTitle = "Tree of Life";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        display: inline-block;
+        margin: 0 8px;
+        white-space: nowrap;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(6deg);
+        width: 320px;
+        height: 320px;
+        opacity: 0.28;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+
+      .symbol-bg svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        filter: contrast(1.1);
+        opacity: 1;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 1.05;
+        text-align: center;
+        margin: 0 0 8px;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 16px;
+        margin: 0 0 24px;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 18px 0 24px;
+        letter-spacing: 1px;
+      }
+
+      p { margin: 0 0 16px; }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px 16px;
+        background: var(--soft);
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 34px 0 16px;
+        font-weight: bold;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 16px;
+      }
+
+      .mini-links a {
+        display: inline-block;
+        margin: 4px 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 700px) {
+        html, body { font-size: 17px; }
+        h1 { font-size: 32px; }
+        .frame { padding: 18px 16px 24px; }
+        .symbol-bg {
+          width: 220px;
+          height: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/symbols/">symbols index</a> ]</span>
+        <span>[ <a class="green" href="/symbols/serpent">previous</a> ]</span>
+        <span>[ <a class="red" href="/symbols/mandala">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg" aria-hidden="true">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <g stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="150" cy="42" r="16" />
+              <circle cx="104" cy="82" r="16" />
+              <circle cx="196" cy="82" r="16" />
+              <circle cx="150" cy="122" r="16" />
+              <circle cx="104" cy="162" r="16" />
+              <circle cx="196" cy="162" r="16" />
+              <circle cx="150" cy="202" r="16" />
+              <circle cx="150" cy="248" r="16" />
+
+              <path d="M150 58 L150 106" />
+              <path d="M150 58 L104 66" />
+              <path d="M150 58 L196 66" />
+              <path d="M104 98 L150 106" />
+              <path d="M196 98 L150 106" />
+              <path d="M104 98 L104 146" />
+              <path d="M196 98 L196 146" />
+              <path d="M150 138 L104 146" />
+              <path d="M150 138 L196 146" />
+              <path d="M104 178 L150 186" />
+              <path d="M196 178 L150 186" />
+              <path d="M150 218 L150 232" />
+
+              <path d="M150 20
+                       C182 20, 215 36, 232 64
+                       C248 90, 242 120, 220 142
+                       C206 156, 202 174, 206 190
+                       C212 214, 230 228, 250 236" />
+              <path d="M150 20
+                       C118 20, 85 36, 68 64
+                       C52 90, 58 120, 80 142
+                       C94 156, 98 174, 94 190
+                       C88 214, 70 228, 50 236" />
+              <path d="M150 218
+                       C138 238, 126 252, 110 266" />
+              <path d="M150 218
+                       C162 238, 174 252, 190 266" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Tree of Life</h1>
+          <p class="subtitle">symbols / structure / growth / archive entry 004</p>
+
+          <div class="divider">***</div>
+
+          <p>
+            The tree of life appears across cultures as an image of connection.
+            Roots descend into darkness, branches reach toward light, and the trunk
+            holds the tension between below and above. It is a living axis.
+          </p>
+
+          <p>
+            Because of this, the tree often represents the structure of being itself.
+            It shows how different levels of existence remain linked rather than
+            separate. What grows above depends on what is rooted below.
+          </p>
+
+          <div class="quote">
+            what reaches upward is sustained by what is hidden beneath.
+          </div>
+
+          <h2 class="section-title">roots and branches</h2>
+
+          <p>
+            Psychologically, the roots can be seen as the unconscious, memory,
+            instinct, and ancestry. The branches represent conscious life, thought,
+            action, and outward expression.
+          </p>
+
+          <p>
+            Growth does not come from ignoring one side, but from maintaining the
+            connection between them. When roots are denied, the visible structure
+            weakens. When branches are suppressed, life loses expression.
+          </p>
+
+          <h2 class="section-title">center and axis</h2>
+
+          <p>
+            Many traditions treat the tree as a center point, a place where worlds
+            meet. It becomes a symbol of alignment, where different layers of life
+            are brought into relation rather than fragmentation.
+          </p>
+
+          <p>
+            In this sense, the tree of life is not static. It is always growing,
+            always changing, but it maintains a coherent structure while doing so.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/symbols/">back to symbols index</a>
+            <a class="blue" href="/symbols/mandala">continue to: mandala</a>
+            <a class="red" href="/symbols/serpent">serpent</a>
+          </div>
+
+          <p class="footer-note">
+            this page is part of the hidden archive.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,11 +1,83 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="wisdom archive"
+  description="hidden archive of symbols, psyche, myth, death, dream, and self-realisation"
+>
+  <section class="hero">
+    <div class="hero-kicker">home / archive index</div>
+    <h1>wisdom archive</h1>
+    <p>
+      a growing hidden archive of writings on
+      <a href="/foundations" class="link-blue">foundations</a>,
+      <a href="/symbols/" class="link-red">symbols</a>,
+      <a href="/archetypes/hero" class="link-green">archetype</a>,
+      dream, myth, death, <a href="/alchemy" class="link-red">alchemy</a>, creativity, and inner transformation.
+    </p>
+    <p class="muted">
+      built to feel like an old private knowledge site discovered late at night.
+    </p>
+  </section>
+
+  <div class="box">
+    <div class="box-title">recommended starting points</div>
+    <div class="box-body">
+      <div class="grid-links">
+        <a href="/foundations">
+          <span class="link-title">foundations</span>
+          <span class="link-desc">self, ego, persona, shadow, consciousness, and inner development.</span>
+        </a>
+
+        <a href="/symbols/">
+          <span class="link-title">symbols</span>
+          <span class="link-desc">fire, fool, serpent, tree of life, mandala, labyrinth, and mirror.</span>
+        </a>
+
+        <a href="/dreams/active-imagination">
+          <span class="link-title">active imagination</span>
+          <span class="link-desc">a method for entering dialogue with the inner world.</span>
+        </a>
+
+        <a href="/death/dance-of-death">
+          <span class="link-title">dance of death</span>
+          <span class="link-desc">mortality, folly, paradox, and remembering death.</span>
+        </a>
+
+        <a href="/self">
+          <span class="link-title">self</span>
+          <span class="link-desc">identity, intuition, play, paradox, and the wandering path.</span>
+        </a>
+
+        <a href="/alchemy">
+          <span class="link-title">alchemy</span>
+          <span class="link-desc">nigredo, albedo, rubedo, transformation, and the philosopher's stone.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-title">main archive wings</div>
+    <div class="box-body">
+      <p><a href="/foundations" class="link-blue">foundations</a> — self, ego, shadow, consciousness, individuation</p>
+      <p><a href="/symbols/" class="link-red">symbols</a> — fire, fool, serpent, tree of life, mandala, labyrinth, mirror</p>
+      <p><a href="/archetypes/hero" class="link-green">archetypes</a> — hero, anima, animus, wise figures, child, trickster</p>
+      <p><a href="/dreams/active-imagination">dreams + inner work</a> — projection, fantasy, nightmare, dialogue</p>
+      <p><a href="/alchemy">alchemy</a> — nigredo, albedo, rubedo, transformation, philosopher's stone</p>
+      <p><a href="/mysticism/synchronicity">mysticism</a> — synchronicity, vision, paranormal, meaning</p>
+      <p><a href="/death/dance-of-death">death</a> — mortality, grief, dance macabre, afterlife motifs</p>
+      <p><a href="/self">self</a> — identity, intuition, play, paradox, wanderer</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-title">archive note</div>
+    <div class="box-body">
+      <p class="muted">
+        this is meant to grow into a large timeless text vault rather than a polished modern brand site.
+      </p>
+    </div>
+  </div>
 </Layout>

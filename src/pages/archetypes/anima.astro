@@ -1,0 +1,255 @@
+
+
+---
+const pageTitle = "Anima";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        display: inline-block;
+        margin: 0 8px;
+        white-space: nowrap;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(245,245,245,0.94)),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.018) 0px,
+            rgba(0,0,0,0.018) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(3deg);
+        width: 300px;
+        height: 300px;
+        opacity: 0.2;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+
+      .symbol-bg svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 0 0 8px;
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 24px;
+        text-transform: lowercase;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 18px 0 24px;
+      }
+
+      p { margin: 0 0 16px; }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px;
+        background: linear-gradient(to bottom, #f3f3f3, #ebebeb);
+        font-style: italic;
+        text-align: center;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.65);
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0 14px;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .mini-links a {
+        margin: 0 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+
+      .content-layer p,
+      .content-layer h1,
+      .content-layer h2,
+      .content-layer .subtitle,
+      .content-layer .divider,
+      .content-layer .quote,
+      .content-layer .mini-links,
+      .content-layer .footer-note {
+        text-shadow: 0 0 1px rgba(255,255,255,0.45);
+      }
+
+      @media (max-width: 700px) {
+        h1 { font-size: 34px; }
+        .symbol-bg {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/archetypes/">archetypes index</a> ]</span>
+        <span>[ <a class="green" href="/archetypes/shadow-archetype">previous</a> ]</span>
+        <span>[ <a class="red" href="/archetypes/animus">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg" aria-hidden="true">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <g stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 160 C60 120, 100 200, 140 160 C180 120, 220 200, 260 160" />
+              <path d="M20 190 C60 150, 100 230, 140 190 C180 150, 220 230, 260 190" />
+              <path d="M20 130 C60 90, 100 170, 140 130 C180 90, 220 170, 260 130" />
+              <circle cx="150" cy="150" r="90" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Anima</h1>
+          <p class="subtitle">archetypes / inner image / feeling / archive entry 003</p>
+
+          <div class="divider">***</div>
+
+          <p>
+            The anima represents the inner feminine image within the psyche.
+            It is not simply a gendered idea, but a pattern of feeling, image,
+            receptivity, and emotional depth.
+          </p>
+
+          <p>
+            It often appears in dreams, fantasies, and projections as a figure
+            that draws attention inward. The anima can inspire creativity,
+            relationship, and meaning, but can also distort perception if
+            unconscious.
+          </p>
+
+          <div class="quote">
+            the anima carries the image of what the ego does not fully know.
+          </div>
+
+          <h2 class="section-title">image and projection</h2>
+
+          <p>
+            The anima frequently appears projected onto others. A person may
+            attribute depth, beauty, or mystery to someone, without realizing
+            these qualities are partly arising from within.
+          </p>
+
+          <p>
+            This projection can create strong attraction or emotional intensity.
+            Over time, reality challenges the projection, leading to either
+            disillusionment or deeper understanding.
+          </p>
+
+          <h2 class="section-title">relation to the self</h2>
+
+          <p>
+            As the anima becomes more conscious, it shifts from projection to
+            relationship. Instead of being experienced only through others,
+            it becomes a source of inner dialogue and feeling.
+          </p>
+
+          <p>
+            This deepens the inner life and allows for a more balanced
+            psychological structure.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/archetypes/">back to archetypes index</a>
+            <a class="blue" href="/archetypes/animus">continue to: animus</a>
+            <a class="red" href="/archetypes/shadow-archetype">shadow</a>
+          </div>
+
+          <p class="footer-note">
+            this page is part of the hidden archive.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

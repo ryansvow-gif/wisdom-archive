@@ -1,0 +1,299 @@
+---
+const pageTitle = "Fire";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      a.blue {
+        color: var(--blue);
+      }
+
+      a.red {
+        color: var(--red);
+      }
+
+      a.green {
+        color: var(--green);
+      }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        display: inline-block;
+        margin: 0 8px;
+        white-space: nowrap;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(245,245,245,0.94)),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.018) 0px,
+            rgba(0,0,0,0.018) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-8deg);
+        width: 300px;
+        height: 300px;
+        opacity: 0.2;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+
+      .symbol-bg svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 42px;
+        line-height: 1.05;
+        text-align: center;
+        margin: 0 0 8px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        margin: 0 0 24px;
+        text-transform: lowercase;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 18px 0 24px;
+        letter-spacing: 1px;
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px 16px;
+        background: linear-gradient(to bottom, #f3f3f3, #ebebeb);
+        font-style: italic;
+        text-align: center;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.65);
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 34px 0 16px;
+        font-weight: bold;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 16px;
+      }
+
+      .mini-links a {
+        display: inline-block;
+        margin: 4px 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+
+      .content-layer p,
+      .content-layer h1,
+      .content-layer h2,
+      .content-layer .subtitle,
+      .content-layer .divider,
+      .content-layer .quote,
+      .content-layer .mini-links,
+      .content-layer .footer-note {
+        text-shadow: 0 0 1px rgba(255,255,255,0.45);
+      }
+
+      @media (max-width: 700px) {
+        html,
+        body {
+          font-size: 17px;
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+
+        .frame {
+          padding: 18px 16px 24px;
+        }
+
+        .symbol-bg {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/symbols/">symbols index</a> ]</span>
+        <span>[ <a class="green" href="/symbols/mirror">previous</a> ]</span>
+        <span>[ <a class="red" href="/symbols/fool">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg" aria-hidden="true">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <g stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M150 46 C178 86, 206 114, 206 148 C206 184, 180 210, 150 210 C120 210, 94 184, 94 148 C94 114, 122 86, 150 46Z" />
+              <path d="M150 210 L150 252" />
+              <path d="M126 252 L174 252" />
+              <path d="M122 146 C132 136, 144 132, 150 118 C156 132, 168 136, 178 146" />
+              <path d="M132 170 C140 178, 160 178, 168 170" />
+              <path d="M150 78 C162 100, 176 114, 176 136" />
+              <path d="M150 78 C138 100, 124 114, 124 136" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Fire</h1>
+          <p class="subtitle">symbols / transformation / illumination / archive entry 001</p>
+
+          <div class="divider">***</div>
+
+          <p>
+            Fire is one of the oldest and most charged symbols in human life. It warms,
+            destroys, protects, reveals, and transforms. Because of this, it often appears
+            wherever a change is taking place that cannot simply be reversed. In symbolic
+            language it often stands beside the <a class="red" href="/symbols/serpent">serpent</a>,
+            the <a class="blue" href="/symbols/labyrinth">labyrinth</a>, or the
+            <a class="green" href="/symbols/mandala">mandala</a> as an image of process,
+            danger, and transformation.
+          </p>
+
+          <p>
+            To encounter fire symbolically is to come near intensity. Something is being
+            consumed. Something else is being made visible. Fire strips away what cannot
+            endure its heat and leaves behind what is more essential.
+          </p>
+
+          <div class="quote">
+            fire does not argue. it changes what it touches.
+          </div>
+
+          <h2 class="section-title">destruction and illumination</h2>
+
+          <p>
+            Fire destroys, but it also illuminates. This double nature is part of its
+            meaning. In psychological life, moments of crisis, passion, rage, insight,
+            or creative breakthrough often carry a fiery quality. They can feel dangerous,
+            but they also reveal what was hidden.
+          </p>
+
+          <p>
+            In this way, fire is not only a symbol of danger. It is a symbol of exposure.
+            What has been concealed is suddenly lit. What has been frozen begins to move.
+          </p>
+
+          <h2 class="section-title">purification and change</h2>
+
+          <p>
+            Fire is also linked to purification. Not because it makes everything gentle,
+            but because it burns away excess. The false, the stale, the dead, and the
+            unnecessary cannot pass through unchanged.
+          </p>
+
+          <p>
+            This is why fire often appears in stories of initiation, sacrifice, trial,
+            and rebirth. The person who passes through fire does not come back exactly
+            the same. In that sense, fire belongs with the <a class="red" href="/symbols/fool">fool</a>
+            who risks the unknown, the <a class="blue" href="/symbols/mirror">mirror</a>
+            that reveals what is true, and the <a class="green" href="/symbols/tree-of-life">tree of life</a>
+            that shows how transformation changes the whole structure of a life.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/symbols/">back to symbols index</a>
+            <a class="blue" href="/symbols/fool">continue to: fool</a>
+            <a class="red" href="/symbols/mirror">mirror</a>
+            <a class="green" href="/symbols/serpent">serpent</a>
+            <a class="blue" href="/symbols/tree-of-life">tree of life</a>
+            <a class="red" href="/symbols/mandala">mandala</a>
+            <a class="green" href="/symbols/labyrinth">labyrinth</a>
+          </div>
+
+          <p class="footer-note">
+            this page is part of the hidden archive.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

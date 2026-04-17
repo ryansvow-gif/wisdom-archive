@@ -1,0 +1,183 @@
+
+
+---
+const pageTitle = "Philosopher's Stone";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(245,245,245,0.96)),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.015) 0px,
+            rgba(0,0,0,0.015) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(2deg);
+        width: 300px;
+        height: 300px;
+        opacity: 0.15;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .symbol-bg svg { width: 100%; height: 100%; }
+
+      .content-layer { position: relative; z-index: 1; }
+
+      h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px;
+        background: #f4f4f4;
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0 14px;
+      }
+
+      .mini-links { text-align: center; margin-top: 30px; }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/alchemy">alchemy index</a> ]</span>
+        <span>[ <a class="green" href="/alchemy/transformation">previous</a> ]</span>
+        <span>[ <a class="red" href="/alchemy/nigredo">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg">
+          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="150" r="90" stroke="black" stroke-width="3"/>
+            <circle cx="150" cy="150" r="50" stroke="black" stroke-width="3"/>
+            <circle cx="150" cy="150" r="20" stroke="black" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Philosopher's Stone</h1>
+          <p class="subtitle">alchemy / totality / completion / archive entry 005</p>
+
+          <p>
+            The philosopher's stone is not a literal object, but a symbol of
+            completion, totality, and transformation brought to its fullest form.
+            It represents the unity of what was once divided.
+          </p>
+
+          <div class="quote">
+            what was broken, clarified, and lived becomes whole.
+          </div>
+
+          <h2 class="section-title">unity</h2>
+          <p>
+            Opposites that once conflicted are now held together. The stone
+            represents a center that is no longer fragmented.
+          </p>
+
+          <h2 class="section-title">impossible substance</h2>
+          <p>
+            In alchemical language, it is described as something that should not
+            exist—yet does. This reflects the difficulty of fully integrating
+            all aspects of experience.
+          </p>
+
+          <h2 class="section-title">return</h2>
+          <p>
+            The process does not end here. Completion becomes the beginning of a
+            new cycle, returning again to nigredo.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/alchemy">back to alchemy index</a>
+            <a class="blue" href="/alchemy/nigredo">return to: nigredo</a>
+          </div>
+
+          <p class="footer-note">this page is part of the hidden archive.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

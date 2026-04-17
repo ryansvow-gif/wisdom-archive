@@ -1,0 +1,200 @@
+---
+const pageTitle = "Shadow Projection";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        margin: 0 8px;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(230,230,230,0.94)),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.03) 0px,
+            rgba(0,0,0,0.03) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(5deg);
+        width: 300px;
+        height: 300px;
+        opacity: 0.18;
+        z-index: 0;
+      }
+
+      .symbol-bg svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px;
+        background: linear-gradient(to bottom, #ececec, #e2e2e2);
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0 14px;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .mini-links a {
+        margin: 0 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/dreams">dreams index</a> ]</span>
+        <span>[ <a class="green" href="/dreams/nightmares">previous</a> ]</span>
+        <span>[ <a class="red" href="/dreams/active-imagination">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg" aria-hidden="true">
+          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="150" r="90" stroke="black" stroke-width="3"/>
+            <path d="M80 80 L220 220" stroke="black" stroke-width="3"/>
+            <path d="M220 80 L80 220" stroke="black" stroke-width="3"/>
+            <circle cx="150" cy="150" r="30" stroke="black" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Shadow Projection</h1>
+          <p class="subtitle">dreams / projection / psyche / archive entry 005</p>
+
+          <p>
+            Shadow projection occurs when parts of the psyche that are not
+            recognized are experienced as coming from outside. In dreams,
+            this often appears as threatening figures, conflict, or strong
+            emotional reactions.
+          </p>
+
+          <div class="quote">
+            what is not seen within is often encountered as if it were outside.
+          </div>
+
+          <h2 class="section-title">projection</h2>
+          <p>
+            Instead of recognizing a quality internally, it is perceived in
+            another figure. The dream then stages a confrontation with this
+            disowned aspect.
+          </p>
+
+          <h2 class="section-title">recognition</h2>
+          <p>
+            The turning point comes when the figure is no longer seen as purely
+            external, but as connected to the self.
+          </p>
+
+          <h2 class="section-title">integration</h2>
+          <p>
+            Bringing this material into awareness reduces reactivity and
+            allows a more complete relationship to one’s own nature.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/dreams">back to dreams index</a>
+            <a class="blue" href="/dreams/active-imagination">continue to: active imagination</a>
+          </div>
+
+          <p class="footer-note">this page is part of the hidden archive.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

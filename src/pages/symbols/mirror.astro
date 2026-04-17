@@ -1,0 +1,219 @@
+
+
+---
+const pageTitle = "Mirror";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        display: inline-block;
+        margin: 0 8px;
+        white-space: nowrap;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(4deg);
+        font-size: 250px;
+        opacity: 0.12;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 1.05;
+        text-align: center;
+        margin: 0 0 8px;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 16px;
+        margin: 0 0 24px;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 18px 0 24px;
+        letter-spacing: 1px;
+      }
+
+      p { margin: 0 0 16px; }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px 16px;
+        background: var(--soft);
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 34px 0 16px;
+        font-weight: bold;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 16px;
+      }
+
+      .mini-links a {
+        display: inline-block;
+        margin: 4px 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 700px) {
+        html, body { font-size: 17px; }
+        h1 { font-size: 32px; }
+        .frame { padding: 18px 16px 24px; }
+        .symbol-bg { font-size: 180px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/symbols/">symbols index</a> ]</span>
+        <span>[ <a class="green" href="/symbols/labyrinth">previous</a> ]</span>
+        <span>[ <a class="red" href="/symbols/fire">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg">🪞</div>
+
+        <div class="content-layer">
+          <h1>Mirror</h1>
+          <p class="subtitle">symbols / reflection / truth / archive entry 007</p>
+
+          <div class="divider">***</div>
+
+          <p>
+            The mirror is a symbol of reflection. It shows what is present without
+            adding or removing anything. Because of this, it is often linked to truth,
+            but also to illusion, depending on what is being seen.
+          </p>
+
+          <p>
+            What appears in the mirror is not separate from the one who looks.
+            The image reflects something already there, but it may not always be
+            recognized immediately.
+          </p>
+
+          <div class="quote">
+            the mirror does not change what is seen, but it reveals what is already present.
+          </div>
+
+          <h2 class="section-title">self and reflection</h2>
+
+          <p>
+            Psychologically, the mirror represents self-seeing. This can come through
+            direct awareness, but also through other people, dreams, and situations
+            that reflect aspects of oneself.
+          </p>
+
+          <p>
+            Sometimes what is reflected is accepted. Other times it is resisted.
+            This resistance often reveals something that has not yet been integrated.
+          </p>
+
+          <h2 class="section-title">truth and illusion</h2>
+
+          <p>
+            The mirror can reveal truth, but it can also distort if what is being
+            perceived is filtered through expectation or fear. Because of this,
+            the mirror is tied to both clarity and deception.
+          </p>
+
+          <p>
+            To see clearly requires not only looking, but also the ability to remain
+            with what is seen without immediately changing it.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/symbols/">back to symbols index</a>
+            <a class="blue" href="/symbols/fire">continue to: fire</a>
+            <a class="red" href="/symbols/labyrinth">labyrinth</a>
+          </div>
+
+          <p class="footer-note">
+            this page is part of the hidden archive.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

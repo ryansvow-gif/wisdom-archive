@@ -1,0 +1,181 @@
+
+
+---
+const pageTitle = "Rubedo";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(240,240,240,0.94)),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.02) 0px,
+            rgba(0,0,0,0.02) 1px,
+            transparent 1px,
+            transparent 4px
+          );
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(4deg);
+        width: 300px;
+        height: 300px;
+        opacity: 0.18;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .symbol-bg svg { width: 100%; height: 100%; }
+
+      .content-layer { position: relative; z-index: 1; }
+
+      h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px;
+        background: #f0f0f0;
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0 14px;
+      }
+
+      .mini-links { text-align: center; margin-top: 30px; }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/alchemy">alchemy index</a> ]</span>
+        <span>[ <a class="green" href="/alchemy/albedo">previous</a> ]</span>
+        <span>[ <a class="red" href="/alchemy/transformation">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg">
+          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="150" r="90" stroke="black" stroke-width="3"/>
+            <path d="M150 70 L210 150 L150 230 L90 150 Z" stroke="black" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <div class="content-layer">
+          <h1>Rubedo</h1>
+          <p class="subtitle">alchemy / reddening / embodiment / archive entry 003</p>
+
+          <p>
+            Rubedo is the stage of completion and embodiment. After clarification,
+            the process returns to intensity—but no longer chaotic. What has been
+            broken down and clarified now becomes lived.
+          </p>
+
+          <div class="quote">
+            what was understood becomes lived.
+          </div>
+
+          <h2 class="section-title">integration</h2>
+          <p>
+            Rubedo is not abstract understanding. It is the point where insight
+            becomes part of life itself.
+          </p>
+
+          <h2 class="section-title">return of fire</h2>
+          <p>
+            The energy of nigredo returns, but transformed. It is no longer
+            destructive, but vital, directed, and alive.
+          </p>
+
+          <h2 class="section-title">completion</h2>
+          <p>
+            Rubedo marks a form of completion, though not an end. It is a stage
+            where something whole begins to take shape in reality.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/alchemy">back to alchemy index</a>
+            <a class="blue" href="/alchemy/transformation">continue to: transformation</a>
+          </div>
+
+          <p class="footer-note">this page is part of the hidden archive.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

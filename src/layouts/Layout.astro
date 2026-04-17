@@ -1,23 +1,423 @@
+---
+const {
+  title = "wisdom archive",
+  description = "a hidden archive of symbols, psyche, myth, and inner knowledge",
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <style is:global>
+      :root {
+        --bg: #d7d7d7;
+        --paper: #fbfbf7;
+        --paper-2: #f3f1ea;
+        --line: #bdb8ab;
+        --line-dark: #8c877b;
+        --text: #111111;
+        --muted: #5e5a52;
+        --blue: #0000cc;
+        --blue2: #0033cc;
+        --red: #b10000;
+        --green: #0b6b2a;
+      }
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      body {
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 1.55;
+        background-image:
+          linear-gradient(to bottom, rgba(255,255,255,0.18), rgba(0,0,0,0.03)),
+          repeating-linear-gradient(
+            to bottom,
+            #d9d9d9 0px,
+            #d9d9d9 2px,
+            #d5d5d5 2px,
+            #d5d5d5 4px
+          );
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: var(--blue2);
+      }
+
+      .link-red {
+        color: var(--red) !important;
+      }
+
+      .link-green {
+        color: var(--green) !important;
+      }
+
+      .link-blue {
+        color: var(--blue2) !important;
+      }
+
+      .shell {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 16px 40px;
+      }
+
+      .page {
+        width: 1120px;
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid var(--line-dark);
+        box-shadow: 0 0 0 1px #ece8dd inset;
+      }
+
+      .top-strip {
+        background: #ece7d8;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 0.4px;
+        padding: 6px 12px;
+        text-transform: lowercase;
+        text-align: center;
+      }
+
+      .site-header {
+        text-align: center;
+        padding: 20px 20px 14px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(to bottom, #f9f8f4, #f1eee4);
+      }
+
+      .site-title {
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 40px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        color: #111;
+      }
+
+      .site-title a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-tagline {
+        margin-top: 5px;
+        font-size: 11px;
+        color: #6d6558;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      .nav-bar {
+        text-align: center;
+        background: #f5f2e8;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid var(--line);
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .nav-bar a {
+        margin: 0 9px;
+        text-decoration: underline;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        align-items: start;
+      }
+
+      .sidebar {
+        background: #f1eee5;
+        border-right: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .content {
+        padding: 18px 22px 24px;
+        background: var(--paper);
+      }
+
+      .content-inner {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .box {
+        border: 1px solid var(--line);
+        background: #f8f6ef;
+        margin-bottom: 12px;
+      }
+
+      .box-title {
+        background: #ece7d8;
+        border-bottom: 1px solid var(--line);
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        padding: 6px 8px;
+      }
+
+      .box-body {
+        padding: 8px;
+      }
+
+      .side-list,
+      .mini-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .side-list li,
+      .mini-list li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .side-list a,
+      .mini-list a {
+        display: block;
+        padding: 3px 0;
+        text-decoration: underline;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        background: #f8f6ef;
+        padding: 14px 15px;
+        margin-bottom: 12px;
+      }
+
+      .hero-kicker {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #7d7464;
+        margin-bottom: 7px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: normal;
+        color: #111;
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 23px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .archive-note {
+        font-size: 12px;
+        color: #3f3a32;
+      }
+
+      .grid-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .grid-links a {
+        display: block;
+        border: 1px solid var(--line);
+        background: #f8f6ef;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .grid-links a:hover {
+        background: #f1ede2;
+      }
+
+      .link-title {
+        display: block;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+        margin-bottom: 4px;
+        color: #111;
+        text-decoration: underline;
+      }
+
+      .link-desc {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .prose {
+        border: 1px solid var(--line);
+        background: #faf8f1;
+        padding: 14px 15px;
+      }
+
+      .meta {
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        border-top: 1px solid var(--line);
+        background: #efebdf;
+        color: #6a6256;
+        font-size: 10px;
+        padding: 10px 12px 24px;
+      }
+
+      @media (max-width: 1180px) {
+        .page {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .main {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .content-inner {
+          max-width: 100%;
+        }
+
+        .grid-links {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <div class="page">
+        <div class="top-strip">
+          hidden archive / symbols / psyche / myth / dream work / inner knowledge / est. 2004
+        </div>
+
+        <header class="site-header">
+          <h1 class="site-title">
+            <a href="/">wisdom archive</a>
+          </h1>
+          <div class="site-tagline">a hidden vault of timeless knowledge</div>
+        </header>
+
+        <nav class="nav-bar">
+          <a href="/">home</a>
+          <a href="/foundations" class="link-blue">foundations</a>
+          <a href="/symbols" class="link-red">symbols</a>
+          <a href="/archetypes" class="link-green">archetypes</a>
+          <a href="/dreams">dreams</a>
+          <a href="/alchemy">alchemy</a>
+          <a href="/death">death</a>
+        </nav>
+
+        <div class="main">
+          <aside class="sidebar">
+            <div class="box">
+              <div class="box-title">main sections</div>
+              <div class="box-body">
+                <ul class="side-list">
+                  <li><a href="/foundations" class="link-blue">foundations</a></li>
+                  <li><a href="/symbols" class="link-red">symbols</a></li>
+                  <li><a href="/archetypes" class="link-green">archetypes</a></li>
+                  <li><a href="/dreams">dreams + inner work</a></li>
+                  <li><a href="/mysticism">mysticism</a></li>
+                  <li><a href="/alchemy">alchemy</a></li>
+                  <li><a href="/death">death</a></li>
+                  <li><a href="/self">self</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box-title">archive feeling</div>
+              <div class="box-body">
+                <div class="archive-note">
+                  personal website<br />
+                  occult document vault<br />
+                  old internet archive<br />
+                  hidden research pages<br />
+                  plain html spirit
+                </div>
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box-title">entry points</div>
+              <div class="box-body">
+                <ul class="mini-list">
+                  <li><a href="/foundations/what-is-the-self">what is the self</a></li>
+                  <li><a href="/symbols">symbols</a></li>
+                  <li><a href="/dreams">dreams</a></li>
+                  <li><a href="/self">self</a></li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+
+          <main class="content">
+            <div class="content-inner">
+              <slot />
+            </div>
+          </main>
+        </div>
+
+        <footer class="footer">
+          private symbolic research archive / hand-built pages / ongoing expansion
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

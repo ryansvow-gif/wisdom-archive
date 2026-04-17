@@ -1,0 +1,203 @@
+
+
+---
+const pageTitle = "Trickster";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        --paper: #ffffff;
+        --ink: #000000;
+        --line: #000000;
+        --soft: #efefef;
+        --blue: #0000ee;
+        --red: #cc0000;
+        --green: #008000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      a { text-decoration: underline; }
+      a.blue { color: var(--blue); }
+      a.red { color: var(--red); }
+      a.green { color: var(--green); }
+
+      .page {
+        width: min(900px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+      }
+
+      .topbar {
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        text-align: center;
+        background: #fafafa;
+      }
+
+      .topbar span {
+        display: inline-block;
+        margin: 0 8px;
+        white-space: nowrap;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        padding: 22px 24px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .symbol-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-10deg);
+        font-size: 240px;
+        opacity: 0.12;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 18px 0 24px;
+      }
+
+      p { margin: 0 0 16px; }
+
+      .quote {
+        margin: 22px auto;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        padding: 14px;
+        background: var(--soft);
+        font-style: italic;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0 14px;
+      }
+
+      .mini-links {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .mini-links a {
+        margin: 0 10px;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 26px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <span>[ <a class="blue" href="/">home</a> ]</span>
+        <span>[ <a class="blue" href="/archetypes/">archetypes index</a> ]</span>
+        <span>[ <a class="green" href="/archetypes/child">previous</a> ]</span>
+        <span>[ <a class="red" href="/archetypes/wise-old-man">next</a> ]</span>
+      </div>
+
+      <main class="frame">
+        <div class="symbol-bg">⚡</div>
+
+        <div class="content-layer">
+          <h1>Trickster</h1>
+          <p class="subtitle">archetypes / disruption / paradox / archive entry 006</p>
+
+          <div class="divider">***</div>
+
+          <p>
+            The trickster is the archetype of disruption, inversion, and paradox.
+            It breaks patterns, challenges assumptions, and exposes hidden
+            contradictions.
+          </p>
+
+          <p>
+            It often appears where systems have become too rigid. Through humor,
+            chaos, or misdirection, the trickster destabilizes what is fixed.
+          </p>
+
+          <div class="quote">
+            what is too certain invites disruption.
+          </div>
+
+          <h2 class="section-title">breaking structure</h2>
+
+          <p>
+            The trickster interrupts established forms. It reveals where rules
+            are arbitrary or where meaning has become stagnant.
+          </p>
+
+          <p>
+            This can appear as confusion, humor, or unexpected reversal.
+            What seemed stable begins to shift.
+          </p>
+
+          <h2 class="section-title">creative function</h2>
+
+          <p>
+            Although disruptive, the trickster also creates space for change.
+            By breaking patterns, it allows new forms to emerge.
+          </p>
+
+          <p>
+            Without it, systems become static. With too much of it, structure
+            collapses. Balance is necessary.
+          </p>
+
+          <div class="mini-links">
+            <a class="blue" href="/archetypes/">back to archetypes index</a>
+            <a class="blue" href="/archetypes/wise-old-man">continue to: wise old man</a>
+            <a class="red" href="/archetypes/child">child</a>
+          </div>
+
+          <p class="footer-note">
+            this page is part of the hidden archive.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
